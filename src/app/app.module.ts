@@ -7,7 +7,6 @@ import { EmpService } from './empService.service';
 @NgModule({
   declarations: [
     AppComponent,
-    
   ],
   imports: [
     BrowserModule,

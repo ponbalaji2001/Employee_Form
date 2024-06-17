@@ -8,61 +8,56 @@
 
 <body>
 <!--Employee Registration Form-->
-<form (ngSubmit)="AddUser()" #myForm="ngForm">
+<form (ngSubmit)="AddUser(myForm)" #myForm="ngForm">
   <h2>Employee Details</h2>
   <label for="Name" class="floatLabel">Name</label>
-  <input id="Name" name="Name" type="text" placeholder="Your name" [(ngModel)]="name" ngModel required #_name="ngModel">
+  <input id="Name" name="name" type="text" placeholder="name" [(ngModel)]="name" autocomplete="off" required>
   <div>
-    <small *ngIf="_name.invalid && _name.touched">*Name is required</small>
+    <small *ngIf="myForm.controls['name'].invalid && myForm.controls['name'].touched">*Name is required</small>
   </div>
 
-  <label for="ID" class="floatLabel">ID</label>
-  <input id="ID" name="ID" type="text" placeholder="Your ID" [(ngModel)]="id" ngModel required #_id="ngModel">
-  <div>
-    <small *ngIf="_id.invalid && _id.touched">*ID is required</small>
-  </div>
- 
   <label for="Age" class="floatLabel">Age</label>
-  <input id="Age" min="0" name="Age" type="number" placeholder="Your age" [(ngModel)]="age" ngModel required #_age="ngModel">
+  <input id="Age" min="0" name="age" type="number" placeholder="age" [(ngModel)]="age" autocomplete="off" required>
   <div>
-    <small *ngIf="_age.invalid && _age.touched">*Age is required</small>
+    <small *ngIf="myForm.controls['age'].invalid && myForm.controls['age'].touched">*Age is required</small>
   </div>
 
   <label for="Location" class="floatLabel">Location</label>
-  <input id="Location" name="Location" type="text" placeholder="Your location" [(ngModel)]="location" ngModel required #_location="ngModel">
+  <input id="Location" name="location" type="text" placeholder="location" [(ngModel)]="location" autocomplete="off" required>
   <div>
-    <small *ngIf="_location.invalid && _location.touched">*Location is required</small>
+    <small *ngIf="myForm.controls['location'].invalid && myForm.controls['location'].touched">*Location is required</small>
   </div>
-  
+
   <label for="Designation" class="floatLabel">Designation</label>
-  <input id="Designation" name="Designation" type="text" placeholder="Your designation" [(ngModel)]="designation" ngModel required #_designation="ngModel">
+  <input id="Designation" name="designation" type="text" placeholder="designation" [(ngModel)]="designation" autocomplete="off"  required>
   <div>
-    <small *ngIf="_designation.invalid && _designation.touched">*Designation is required</small>
+    <small *ngIf="myForm.controls['designation'].invalid && myForm.controls['designation'].touched">*Designation is required</small>
   </div>
 
   <label for="Salary" class="floatLabel">Salary (&#8377;)</label>
-  <input id="Salary" name="Salary" type="text" placeholder="Your salary" [(ngModel)]="salary" ngModel required #_salary="ngModel">
+  <input id="Salary" name="salary" type="number" placeholder="salary" [(ngModel)]="salary" autocomplete="off" required>
   <div>
-    <small *ngIf="_salary.invalid && _salary.touched">*Salary is required</small>
+    <small *ngIf="myForm.controls['salary'].invalid && myForm.controls['salary'].touched">*Salary is required</small>
   </div>
 
-  <button type="submit" [disabled]="!myForm.valid">SUBMIT</button>
+  <button type="submit" [disabled]="myForm.invalid">Add User</button>
 </form>
+
 <br>
 <br>
 <!--Table showing registered employee information-->
 <table>
   <tr>
-    <th>Name</th>
     <th>ID</th>
+    <th>Name</th>
     <th>Age</th>
     <th>Location</th>
     <th>Designation</th>
     <th>Salary</th>
   </tr>
   <tr *ngFor="let e of Employee;">
-    <td>{{e.name}}</td>
     <td>{{e.id}}</td>
+    <td>{{e.name}}</td>
     <td>{{e.age}}</td>
     <td>{{e.location}}</td>
     <td>{{e.designation}}</td>

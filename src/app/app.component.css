@@ -1,20 +1,20 @@
 /* Form */
 form {
     background:#f9f9f9;
-    padding: 48px 64px 32px;
-    max-width: 400px;
-    margin: 50px auto 0;
+    padding: 30px 64px 32px;
+    max-width: 350px;
+    margin: 30px auto 0;
     box-shadow: 0 0 16px #222;
     border-radius: 2px;
 }
 
 h2 {
-        margin: 0 0 50px 0;
-        text-align: center;
-        font-size: 26px;
-        color: darken(#e5e5e5, 50%);
-        border-bottom: solid 1px #cbcbcb;
-    }
+    margin: 0 0 20px 0;
+    text-align: center;
+    font-size: 26px;
+    color: darken(#e5e5e5, 50%);
+    border-bottom: solid 1px #cbcbcb;
+ }
 
 input[type="text"],
 input[type="number"] {
@@ -31,47 +31,50 @@ input[type="number"]:focus {
     }
 
 button {
-        background-color: rgb(156, 206, 70);;
+        background-color: rgb(156, 206, 70);
         box-shadow: 0 3px 0 0 darken;
         border-radius: 2px;
         border:none;
         color: #fff;
         cursor: pointer;
         display: block;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 25.6px;
         margin: 32px 0 0;
         outline:none;
-        padding: 14px 0;
+        padding: 5px;
         text-shadow: 0 1px #68B25B;
-        width: 150px;
+        width: 100px;
+        height: 40px;
         margin-left: auto;
         margin-right: auto;
-    }
+ }
+
+button:disabled {
+    cursor: not-allowed;
+  }
 
 input {
-            display: block;
-            box-sizing: border-box;
-            width: 100%;
-            outline: none;
-            margin: 0;
-        }
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    outline: none;
+    margin: 0;
+    height: 35px;
+}
     
-button:hover {
-        background: rgb(114, 180, 0);
-        text-shadow: 0 1px 3px darken;
-    }
 
 ::placeholder {
-            color:rgb(172, 172, 170);
-            opacity: 1;
-        }
+    color:rgb(172, 172, 170);
+    opacity: 1;
+}
     
 label {
         color: rgb(111, 110, 110);
-        font-size: 18px;
+        font-size: 17.5px;
         display: inline-block;
-        padding: 4px 10px;
+        padding-top: 10px;
+        padding-bottom: 2px;
         font-weight: 400;
         background-color: rgba(178, 173, 173, 0); 
     }

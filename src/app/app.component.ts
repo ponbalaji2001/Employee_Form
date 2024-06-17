@@ -1,6 +1,7 @@
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 import { EmpService } from './empService.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,6 @@ export class AppComponent implements OnInit {
   title = 'FormApp';
   constructor(private empServ: EmpService){}
   name='';
-  id='';
   age='';
   location='';
   designation='';
@@ -31,7 +31,9 @@ export class AppComponent implements OnInit {
   };
   
   //Add employee details to the service.
-  AddUser(){
-    this.empServ.AddNewUser(this.name,this.id, this.age,this.location,this.designation,this.salary);
+  AddUser(form: NgForm){
+    const id="E"+this.name[0].toLocaleUpperCase()+Math.floor(1000 + Math.random() * 9000);
+    this.empServ.AddNewUser(id, this.name, this.age, this.location, this.designation, this.salary);
+    form.resetForm();
   }
 }
